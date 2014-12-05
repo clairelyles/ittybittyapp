@@ -32,4 +32,11 @@ app.post("/thanks", function(req, res) {
 	})
 })
 
+app.get("/:token", function(req, res) {
+	var urlToken = req.params.token;
+	db.Links.find({where: {'token': urlToken}}).done(function(err, row) {
+		res.redirect(row.url);
+	})
+})
+
 app.listen(process.env.PORT || 3000);
