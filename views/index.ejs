@@ -1,0 +1,21 @@
+<% include /header %>
+
+	<div class="container-fluid body">
+		<div class="row">
+			<div class="col-md-4 col-sm-4"></div>
+			<div class="col-md-4 col-sm-4">
+				<% if (typeof errMsg !== "undefined") { %>
+				<!-- if errMsg.msg is defined, that means a errMsg object was created and a URL was not input. -->
+				<h1>Please Ender a valid URL</h1>
+				<% } %>
+				<h3>Enter URL Below:</h3><br>
+					<form action="/thanks" method="post">
+						<input type="text" name="url" placeholder="Enter URL">
+						<input type="submit" value="Generate">
+					</form>
+			</div>
+			<div class="col-md-4 col-sm-4"></div>
+		</div>
+	</div>
+
+<% include /footer %>
